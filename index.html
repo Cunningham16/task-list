@@ -8,15 +8,18 @@
 </head>
 <body>
 	<section class="main-list">
-		<input type="text" value="Main list" readonly="true" class="header-list">
+		<input type="text" value="Мой список задач" class="header-list" maxlength="40">
 		<section class="list">
 			<div class="task" data-numOfTask="1">
 				<input type="text" value="Task1" class="text-task" data-numoftask="1">
 				<input type="checkbox" class="checkbox-task" data-numOfTask="1">
 				<button class="close-button" data-numOfTask="1">Close</button>
 			</div>
+			<div class="hidden display-empty">
+				<h2>Вау, здесь пусто, добавь-ка задач!</h2>
+			</div>
 		</section>
-		<input name="" id="input-text" cols="25" rows="1" class="input-text" type="text"placeholder="Введи сюда задачу и нажми Enter" maxlength="25">
+		<input name="" id="input-text" cols="25" rows="1" class="input-text" type="text"placeholder="Введи сюда задачу и нажми Enter" maxlength="40">
 	</section>
 	<script src="src/index.js"></script>
 </body>
