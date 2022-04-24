@@ -8,7 +8,7 @@
 </head>
 <body>
 	<section class="main-list">
-		<input type="text" value="Мой список задач" class="header-list" maxlength="40">
+		<input type="text" value="Мой список задач" class="header-list" maxlength="60">
 		<section class="list">
 			<div class="task" data-numOfTask="1">
 				<input type="text" value="Task1" class="text-task" data-numoftask="1">
@@ -19,7 +19,25 @@
 				<h2>Вау, здесь пусто, добавь-ка задач!</h2>
 			</div>
 		</section>
-		<input name="" id="input-text" cols="25" rows="1" class="input-text" type="text"placeholder="Введи сюда задачу и нажми Enter" maxlength="40">
+		<div class="input-form">
+			<input name="" id="input-text" class="input-text" type="text" placeholder="Введи задачу сюда" maxlength="40">
+			<div class="btn-input">
+				<select name="" id="input-prior">
+					<option value="4" class="option-priority">
+						<p class="prior-4">Низкий приоритет</p>
+					</option>
+					<option value="3" class="option-priority">
+						<p class="prior-3">Средний приоритет</p>
+					</option>
+					<option value="2" class="option-priority">
+						<p class="prior-2">Повышенный приоритет</p>
+					</option>
+					<option value="1" class="option-priority">
+						<p class="prior-1">Высокий приоритет</p>
+					</option>
+				</select>
+			</div>
+		</div>
 	</section>
 	<script src="src/index.js"></script>
 </body>
