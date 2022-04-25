@@ -5,13 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Task List</title>
 	<link rel="stylesheet" href="src/style.css">
+	<link rel="stylesheet" href="src/calendar-style.css">
 </head>
 <body>
 	<section class="main-list">
 		<input type="text" value="Мой список задач" class="header-list" maxlength="60">
 		<section class="list">
 			<div class="task" data-numOfTask="1">
-				<input type="text" value="Task1" class="text-task" data-numoftask="1">
+				<div class="with-date">
+					<input type="text" value="Task1" class="text-task" data-numoftask="1">
+					<p>24.04.22</p>
+				</div>
 				<input type="checkbox" class="checkbox-task" data-numOfTask="1">
 				<button class="close-button" data-numOfTask="1">Close</button>
 			</div>
@@ -36,6 +40,24 @@
 						<p class="prior-1">Высокий приоритет</p>
 					</option>
 				</select>
+				<div class="days">
+					<button class="calendar"></button>
+					<div class="cont-calendar hidden">
+						<div>
+							<p class="select-data">24.04.2022</p>
+						</div>
+						<div class="select-month">
+							<button class="previous-month"> << </button>
+							<p class="without-days">04.2022</p>
+							<button class="next-month"> >> </button>
+						</div>
+						<div class="calendar-div"></div>
+						<div class="manip-buttons">
+							<button class="ok-button-calendar">Сохранить</button>
+							<button class="cancel-button-calendar">Отмена</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

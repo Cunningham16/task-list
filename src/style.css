@@ -51,6 +51,7 @@ body{
 }
 
 .checkbox-task{
+	align-self: center;
 	width: 20px;
 	height: 20px;
 }
@@ -133,4 +134,50 @@ body{
 .animate-hid{
 	opacity: 0;
 	transform: scale(0.7, 0.7); 
+}
+
+.close-button{
+	align-self: center;
+}
+
+.with-date p{
+	border: 1px solid blue;
+	width: 80px;
+	text-align: center;
+	border-radius: 20px; 
+	margin: 0px;
+	font-size: 13px;
+}
+
+.with-date input{
+	margin-top: 17px;
+	margin-bottom: 2px;
+}
+
+.days{
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+.days .calendar{
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	border: 1px solid blue;
+	background: white;
+}
+
+.btn-input{
+	display: flex;
+}
+
+.manip-buttons{
+	display: flex;
+	justify-content: space-between;
+}
+
+.ok-button-calendar, .cancel-button-calendar{
+	margin-top: 10px;
+	height: 30px;
+	width: 45%;
 }
