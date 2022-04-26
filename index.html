@@ -12,12 +12,12 @@
 		<input type="text" value="Мой список задач" class="header-list" maxlength="60">
 		<section class="list">
 			<div class="task" data-numOfTask="1">
+				<input type="checkbox" class="checkbox-task" data-numOfTask="1" id="check">
+				<label for="check"></label>
 				<div class="with-date">
 					<input type="text" value="Task1" class="text-task" data-numoftask="1">
-					<p>24.04.22</p>
+					<p>24.04.2022</p>
 				</div>
-				<input type="checkbox" class="checkbox-task" data-numOfTask="1">
-				<button class="close-button" data-numOfTask="1">Close</button>
 			</div>
 			<div class="hidden display-empty">
 				<h2>Вау, здесь пусто, добавь-ка задач!</h2>
@@ -26,22 +26,27 @@
 		<div class="input-form">
 			<input name="" id="input-text" class="input-text" type="text" placeholder="Введи задачу сюда" maxlength="40">
 			<div class="btn-input">
-				<select name="" id="input-prior">
-					<option value="4" class="option-priority">
+				<div>	
+				<button class="input-prior">Приоритет</button>
+				<div class="list-prior hidden">
+					<div>
+						<button value="4" class="option-priority">
 						<p class="prior-4">Низкий приоритет</p>
-					</option>
-					<option value="3" class="option-priority">
+					</button>
+					<button value="3" class="option-priority">
 						<p class="prior-3">Средний приоритет</p>
-					</option>
-					<option value="2" class="option-priority">
+					</button>
+					<button value="2" class="option-priority">
 						<p class="prior-2">Повышенный приоритет</p>
-					</option>
-					<option value="1" class="option-priority">
+					</button>
+					<button value="1" class="option-priority">
 						<p class="prior-1">Высокий приоритет</p>
-					</option>
-				</select>
+					</button>
+					</div>
+				</div>
+				</div>
 				<div class="days">
-					<button class="calendar"></button>
+					<button class="calendar">Дата</button>
 					<div class="cont-calendar hidden">
 						<div>
 							<p class="select-data">24.04.2022</p>

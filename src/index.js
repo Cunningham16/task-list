@@ -1,11 +1,9 @@
 let taskList = document.querySelector(".list");
 let headerList = document.querySelector(".header-list");
 let tasks = document.querySelectorAll(".task");
-let closeButtons = document.querySelectorAll(".close-button");
 let taskInput = document.querySelector(".input-text");
 let textTask = document.querySelectorAll(".text-task");
 let displayEmpty = document.querySelector(".display-empty");
-let priorSelect = document.querySelector("#input-prior");
 
 tasks[tasks.length-1].onload = animateTask(tasks[tasks.length-1]);
 
@@ -27,35 +25,23 @@ function animateTask(task){
 	}, 100)
 }
 
-priorSelect.value = 4;
-let currentClass = 'prior'+priorSelect.value;
-
-priorSelect.onchange = changePrior();
-function changePrior(){
-	currentClass = 'prior'+priorSelect.value;
-	return currentClass;
-}
-
 function otherfunc(){
 	for(let task of tasks){
 		let close = task.querySelector(".close-button");
 		let text = task.querySelector(".text-task");
 		let check = task.querySelector(".checkbox-task");
 
-		close.onclick = function(){
+		check.onchange = function(){
+			text.style.transition = "0.2s";
+			text.classList.toggle("checked");
 			setTimeout(function(){
 				task.style.transform = "scale(0.9,0.9)";
 				task.style.opacity = "0";
-			},100)
+			},300)
 			setTimeout(function(){
 				task.remove();
 				renderTasks();
-			},200)
-		}
-		check.onchange = function(){
-			task.classList.toggle("down-check");
-			text.style.transition = "0.2s";
-			text.classList.toggle("checked");
+			},500)
 		}
 		text.addEventListener("keydown", function(e){
 			if(e.keyCode === 13){
@@ -69,25 +55,39 @@ otherfunc();
 
 function createTask(num){
 	let newTask = document.createElement("div");
-
 	newTask.classList.add('task');
 
 	if(tasks.length === 0){
-		let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'"><p>'+showCalendar.textContent+'</p></div>';
-		let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+1+'">';
-		let third = '<button class="close-button" data-numOfTask="'+1+'">Close</button>';
+		if(showCalendar.textContent === "Дата"){
+			let first = '<input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'">';
+			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+1+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 
-		newTask.dataset.numoftask=1;
-		newTask.innerHTML = first+second+third;
-		taskList.append(newTask);
+			newTask.dataset.numoftask=1;
+			newTask.innerHTML = second+first;
+			taskList.append(newTask);
+		}else{
+			let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'"><p>'+showCalendar.textContent+'</p></div>';
+			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+1+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
+
+			newTask.dataset.numoftask=1;
+			newTask.innerHTML = second+first;
+			taskList.append(newTask);
+		}
 	}else{
-		let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'"><p>'+showCalendar.textContent+'</p></div>';
-		let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+(num+1)+'">';
-		let third = '<button class="close-button" data-numOfTask="'+(num+1)+'">Close</button>';
+		if(showCalendar.textContent === "Дата"){
+			let first = '<input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'">';
+			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+(num+1)+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 
-		newTask.dataset.numoftask=Number(tasks[tasks.length-1].dataset.numoftask)+1;
-		newTask.innerHTML = first+second+third;
-		taskList.append(newTask);
+			newTask.dataset.numoftask=Number(tasks[tasks.length-1].dataset.numoftask)+1;
+			newTask.innerHTML = second+first;
+			taskList.append(newTask);
+		}else{
+			let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'"><p>'+showCalendar.textContent+'</p></div>';
+			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+(num+1)+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
+			newTask.dataset.numoftask=Number(tasks[tasks.length-1].dataset.numoftask)+1;
+			newTask.innerHTML = second+first;
+			taskList.append(newTask);
+		}
 	}
 
 	taskInput.value = '';
@@ -126,7 +126,7 @@ function saveDataTask(){
 }
 
 function cancelDataTask(){
-	btnData();
+	showCalendar.textContent = "Дата";
 	calendarContainer.classList.toggle("hidden");
 }
 
@@ -153,20 +153,6 @@ let month = data.getMonth()+1;
 let year = data.getFullYear();
 let currDay = data.getDate();
 
-function btnData(){
-	let a;
-	if(month/10 < 1){
-		a = "0"+month;
-	}else{
-		a = month;
-	}
-
-	if(currDay/10<1){
-		currDay = "0"+currDay;
-	}
-	showCalendar.textContent = currDay+"."+a+"."+year;
-}
-btnData();
 
 function createCalendar(elem, year, month) {
 	let mon = month - 1;
@@ -253,4 +239,29 @@ function renderDataFull() {
 		c = selectedDay.textContent;
 	}
 	currentData.textContent = c+"."+currentMonth.textContent;
+}
+
+let inputPrior = document.querySelector(".input-prior");
+let inputPriorList = document.querySelector(".list-prior");
+let priorElements = document.querySelectorAll(".option-priority");
+
+inputPrior.addEventListener("click", function(){
+	inputPriorList.classList.toggle("hidden")
+})
+
+for(let element of priorElements){
+	element.addEventListener("click", function(){
+		inputPrior.textContent = element.textContent;
+		inputPrior.value = element.value;
+		inputPriorList.classList.add("hidden");
+	})
+}
+inputPrior.textContent = "Низкий приоритет";
+inputPrior.value = 4;
+let currentClass = 'prior'+inputPrior.value;
+
+inputPrior.value.onchange = changePrior();
+function changePrior(){
+	currentClass = 'prior'+inputPrior.value;
+	return currentClass;
 }

@@ -68,3 +68,28 @@
 td{
 	padding: 0;
 }
+
+.manip-buttons{
+	display: flex;
+	justify-content: space-between;
+}
+
+.ok-button-calendar, .cancel-button-calendar{
+	margin-top: 10px;
+	height: 30px;
+	width: 45%;
+	border-radius: 5px;
+	border: 1px solid;
+}
+
+.ok-button-calendar{
+	border-color: blue;
+	background: transparent;
+	color: blue;
+}
+
+.cancel-button-calendar{
+	border-color: red;
+	background: transparent;
+	color: red;
+}
