@@ -11,10 +11,9 @@ function renderTasks(){
 	tasks = document.querySelectorAll(".task");
 
 	if(tasks.length === 0){
-		displayEmpty.classList.remove("hidden");
+		
 	}else if(tasks.length != 0){
 		tasks[tasks.length-1].onload = animateTask(tasks[tasks.length-1]);
-		displayEmpty.classList.add("hidden");
 	}
 }
 
@@ -59,14 +58,14 @@ function createTask(num){
 
 	if(tasks.length === 0){
 		if(showCalendar.textContent === "Дата"){
-			let first = '<input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'">';
+			let first = '<input type="text" value="'+taskInput.value+'" disabled="true" class="text-task '+changePrior()+'" data-numoftask="'+1+'">';
 			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+1+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 
 			newTask.dataset.numoftask=1;
 			newTask.innerHTML = second+first;
 			taskList.append(newTask);
 		}else{
-			let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'"><p>'+showCalendar.textContent+'</p></div>';
+			let first = '<div class="with-date"><input type="text" disabled="true" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+1+'"><p>'+showCalendar.textContent+'</p></div>';
 			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+1+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 
 			newTask.dataset.numoftask=1;
@@ -75,14 +74,14 @@ function createTask(num){
 		}
 	}else{
 		if(showCalendar.textContent === "Дата"){
-			let first = '<input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'">';
+			let first = '<input type="text" value="'+taskInput.value+'" disabled="true" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'">';
 			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+(num+1)+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 
 			newTask.dataset.numoftask=Number(tasks[tasks.length-1].dataset.numoftask)+1;
 			newTask.innerHTML = second+first;
 			taskList.append(newTask);
 		}else{
-			let first = '<div class="with-date"><input type="text" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'"><p>'+showCalendar.textContent+'</p></div>';
+			let first = '<div class="with-date"><input type="text" disabled="true" value="'+taskInput.value+'" class="text-task '+changePrior()+'" data-numoftask="'+(num+1)+'"><p>'+showCalendar.textContent+'</p></div>';
 			let second = '<input type="checkbox" class="checkbox-task" data-numOfTask="'+(num+1)+'" id="check'+(num+1)+'"><label for="check'+(num+1)+'"></label>';
 			newTask.dataset.numoftask=Number(tasks[tasks.length-1].dataset.numoftask)+1;
 			newTask.innerHTML = second+first;
