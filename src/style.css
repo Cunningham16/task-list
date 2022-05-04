@@ -1,28 +1,26 @@
 body{
-	background: rgb(131,58,180);
-	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	margin:0;
+	padding:0;
+	background: #6F81D6;
 }
 
 .main-list{
-	margin: auto auto;
+	position: relative;
+	top: 60px;
 	border-radius: 5px;
 	padding: 20px 30px;
 	display: flex;
 	flex-direction: column;
-	width: 600px;
-	min-height: 400px;
-	align-items: center;
+	width: 100%;
 }
 
 .header-list{
-	text-align: center;
 	background: transparent;
-	border: none;
-	align-self: center; 
+	border: none; 
 	font-size: 35px;
 	color: white;
 	margin-bottom: 20px;
-	width: 100%;
+	width: 40%;
 }
 
 .header-list:focus{
@@ -39,6 +37,7 @@ body{
 	position: relative;
 	transform: scale(0.95,0.95);
 	opacity: 0;
+	width: 100%;
 }
 
 
@@ -47,7 +46,7 @@ body{
 	flex-direction: column;
 	justify-content: flex-start;
 	flex-basis: 70%;
-	min-height: 300px;
+	width:90%;
 }
 
 .checkbox-task{
@@ -59,8 +58,8 @@ body{
 }
 
 .text-task{
-	width: 550px;
 	border: none;
+	width: 300%;
 	outline: none!important;
 	background: transparent;
 	font-size: 18px;
@@ -69,8 +68,8 @@ body{
 .input-text{
 	margin-top: 20px;
 	resize: none;
-	width: 97.4%;
-	height: 80px;
+	width: 88.5%;
+	height: 30px;
 	border-radius: 5px;
 	padding: 8px;
 	font-size: 18px;
@@ -87,10 +86,6 @@ body{
 	display: none;
 }
 
-.display-empty{
-	min-height: 300px;
-}
-
 .display-empty h2{
 	font-size: 25px;
 	margin: 30% 10%;
@@ -98,8 +93,11 @@ body{
 	text-align: center;
 }
 
-.input-form{
-	width:105%;
+.input-form-container{
+	padding:10px;
+	background: white;
+	width:92.5%;
+	border-radius: 5px;
 }
 
 .prior1{
@@ -128,8 +126,9 @@ body{
 	border-radius: 5px;
 	padding-left: 5px;
 	width: 170px; 
-	border: none;
+	border: 1px solid lightgray;
 	background: white;
+	transition: 0.1s;
 }
 
 .list-prior div{
@@ -169,17 +168,22 @@ body{
 }
 
 .days{
-	cursor: pointer;
 	margin-left: 15px;
 	margin-top: 10px;
 }
 
 .days .calendar{
+	cursor: pointer;
 	width: 100px;
 	height: 30px;
 	border-radius: 5px;
-	border: none;
+	border: 1px solid lightgray;
 	background: white;
+	transition: 0.1s;
+}
+
+.calendar:hover, .input-prior:hover{
+	background: lightgray;
 }
 
 .btn-input{
@@ -212,4 +216,53 @@ input[type="checkbox"]:checked + label::before{
 	transform: rotate(360deg);
 }
 
+.add-task{
+	display: flex;
+	width: 94.8%;
+	border-radius: 5px;
+	border: none;
+	background: transparent;
+	align-items: center;
+	transition: 0.1s;
+}
 
+.add-task img{
+	width: 25px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 13px;
+}
+
+.add-task p{
+	padding-top: 3px;
+	line-height: 16px;
+	font-size: 16px;
+}
+
+.add-task:hover{
+	background: #FAFAFA;
+}
+
+.ok-form{
+	cursor: pointer;
+	width: 150px;
+	height: 34px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	background: white;
+	transition: 0.1s;
+	margin-top: 10px;
+}
+
+.cancel-form{
+	margin-top: 10px;
+	cursor: pointer;
+	width: 150px;
+	height: 34px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	background: #e66458;
+	color: white;
+	transition: 0.1s;
+	margin-left: 15px;
+}

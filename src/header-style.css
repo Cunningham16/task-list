@@ -1,9 +1,16 @@
 header{
+	margin-bottom: 40px;
 	padding: 5px 3%;
+	width: 94%;
+	z-index: 3;
+	position: fixed;
+	background-color: #e66458;
+}
+
+.header{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #e66458;
 }
 
 .menu-button, .home-button, .add-task-button, .info-button{

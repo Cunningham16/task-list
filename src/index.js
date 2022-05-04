@@ -264,3 +264,35 @@ function changePrior(){
 	currentClass = 'prior'+inputPrior.value;
 	return currentClass;
 }
+
+
+let addTaskButton = document.querySelector(".add-task");
+let inputForm = document.querySelector(".input-form");
+let cancelForm = document.querySelector(".cancel-form");
+let okForm = document.querySelector(".ok-form");
+
+addTaskButton.addEventListener("click", function(){
+	addTaskButton.style.display = "none";
+	inputForm.classList.toggle("hidden");
+});
+
+okForm.addEventListener("click", function(){
+	if(tasks.length != 0 && taskInput.value != ''){
+		let lastNumTask = tasks[tasks.length-1].dataset.numoftask;
+
+		createTask(Number(lastNumTask));
+		renderTasks();
+		otherfunc();
+	}else if(tasks.length === 0 && taskInput.value != ''){
+		createTask(0);
+		renderTasks();
+		otherfunc();
+	}
+	addTaskButton.style.display = "inherit";
+	inputForm.classList.toggle("hidden");
+});
+
+cancelForm.addEventListener("click", function(){
+	addTaskButton.style.display = "inherit";
+	inputForm.classList.toggle("hidden");
+})
