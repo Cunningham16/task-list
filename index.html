@@ -21,7 +21,7 @@
 			</button>
 			<div class="search">
 				<img src="src/search.svg" alt="" class="icon-search">
-				<input type="text" class="search-input" value="Поиск">
+				<input type="text" class="search-input" placeholder="Быстрый поиск">
 			</div>
 		</div>
 		<div class="left-div">
@@ -69,7 +69,8 @@
 		</section>
 	</section>
 	<section class="main-list">
-		<input type="text" value="Мой список задач" class="header-list" maxlength="60">
+		<div class="header-list-not-input">Мой список задач</div>
+		<input type="text" value="" class="header-list hidden" maxlength="60">
 		<section class="list">
 			<div class="task" data-numOfTask="1">
 				<input type="checkbox" class="checkbox-task" data-numOfTask="1" id="check">

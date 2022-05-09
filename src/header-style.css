@@ -57,18 +57,20 @@ header{
 }
 
 .search-input{
-	border-radius:  0 5px 5px 0;
+	border-radius:  5px;
 	outline: none!important;
 	border: none;
 	background: #f08071;
 	height: 25px;
+	width: 200px;
+	padding-left: 35px;
+}
+
+.search-input::-webkit-input-placeholder{
+	color: black;
 }
 
 .search:hover .search-input{
-	background: white;
-}
-
-.search:hover .icon-search{
 	background: white;
 }
 
@@ -77,23 +79,19 @@ header{
 	background: white;
 }
 
-.search-input:focus + .icon-search{
-	background: white;
-}
-
 .home-button{
 	margin-left: 10px;
 }
 
 .icon-search{
-	border-radius: 5px 0px 0px 5px;
+	position: relative;
+	right: -30px;
 	width: 17px;
 	height: 17px;
 	padding-right: 4px;
 	padding-left: 8px;
 	padding-top: 4.5px;
 	padding-bottom: 5.5px;
-	background: #f08071;
 	border: none;
 }
 

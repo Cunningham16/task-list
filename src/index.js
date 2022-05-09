@@ -1,5 +1,4 @@
 let taskList = document.querySelector(".list");
-let headerList = document.querySelector(".header-list");
 let tasks = document.querySelectorAll(".task");
 let taskInput = document.querySelector(".input-text");
 let textTask = document.querySelectorAll(".text-task");
@@ -186,11 +185,14 @@ function createCalendar(elem, year, month) {
 
 function getDay(date){
 	let day = date.getDay();
-	if(day == 0) day = 7;
+	if(day == 0){
+		day = 7;
+	}
 	return day - 1;
 }
 
 showCalendar.onclick = function() {
+	inputPriorList.classList.add("hidden")
 	let data = new Date();
 	let month = data.getMonth()+1;
 	let year = data.getFullYear();
@@ -209,10 +211,11 @@ previousMonth.addEventListener("click", function(){
 })
 
 nextMonth.addEventListener("click", function(){
-	month += 1;
-	if(month > 12){
+	if(month >= 12){
 		month = 1;
 		year += 1; 
+	}else{
+		month = month+1;
 	}
 	renderDataMonth();
 })
@@ -245,7 +248,8 @@ let inputPriorList = document.querySelector(".list-prior");
 let priorElements = document.querySelectorAll(".option-priority");
 
 inputPrior.addEventListener("click", function(){
-	inputPriorList.classList.toggle("hidden")
+	calendarContainer.classList.add("hidden");
+	inputPriorList.classList.toggle("hidden");
 })
 
 for(let element of priorElements){
@@ -260,6 +264,7 @@ inputPrior.value = 4;
 let currentClass = 'prior'+inputPrior.value;
 
 inputPrior.value.onchange = changePrior();
+
 function changePrior(){
 	currentClass = 'prior'+inputPrior.value;
 	return currentClass;
@@ -296,3 +301,53 @@ cancelForm.addEventListener("click", function(){
 	addTaskButton.style.display = "inherit";
 	inputForm.classList.toggle("hidden");
 })
+
+let menuButton = document.querySelector(".menu-button");
+let sideBar = document.querySelector(".sidebar");
+let mainList = document.querySelector(".main-list");
+let closedSideBar = false;
+
+menuButton.addEventListener("click", function(){
+	if(closedSideBar === false){
+		setTimeout(function(){
+			sideBar.style.width = "0%";
+			sideBar.style.transition = "0.5s";
+			mainList.style.marginLeft = "23%";
+			mainList.style.transition = "0.5s";
+		}, 300)
+		closedSideBar = true;
+	}else if(closedSideBar === true){
+		setTimeout(function(){
+			sideBar.style.width = "20%";
+			sideBar.style.transition = "0.5s";
+			mainList.style.marginLeft = "30%";
+			mainList.style.transition = "0.5s";
+		}, 300)
+		closedSideBar = false;
+	}
+})
+
+let headerBtn = document.querySelector(".header-list-not-input");
+let headerList = document.querySelector(".header-list");
+
+headerBtn.addEventListener("click", function(){
+	headerBtn.classList.add("hidden");
+	headerList.classList.remove("hidden");
+	headerList.value = headerBtn.textContent;
+	headerList.focus();
+});
+
+headerList.addEventListener("keydown", function(e){
+	if(e.keyCode === 13){
+		headerList.classList.add("hidden");
+		headerBtn.classList.remove("hidden");
+		headerBtn.textContent = headerList.value;
+	}
+});
+
+headerList.addEventListener("blur", function(){
+	headerList.classList.add("hidden");
+	headerBtn.classList.remove("hidden");
+	headerBtn.textContent = headerList.value;
+})
+
