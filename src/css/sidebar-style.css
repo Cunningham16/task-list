@@ -1,0 +1,87 @@
+.sidebar{
+	background: #FAFAFA;
+	overflow-y: hidden;
+	height:100%;
+	width: 20%;
+	position: fixed;
+	padding-top: 0;
+	overflow-x: hidden;
+	z-index: 1;
+	top: 40px;
+	left: 0;
+}
+
+.main-list{
+	margin-left: 30%;
+	width:62%;
+	padding: 0px 0px 0px 0px;
+}
+
+.proj-task{
+	overflow: hidden;
+	height: 40px;
+	align-items: center;
+	display: flex;
+	width: 80%;
+	margin-left: 18%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+
+	border: none;
+	background: transparent;
+	border-radius: 5px;
+}
+
+.proj-task:hover{
+	background: silver;
+}
+
+.proj-task img{
+	margin-right: 20px;
+}
+
+.proj-task p{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.main-proj{
+	margin-top: 20px;
+}
+
+.header-projects{
+	display: flex;
+	width: 80%;
+	margin-top: 60px;
+	margin-left: 18%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+
+	border-bottom: 1px solid silver;
+
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header-projects h4{
+	margin:0px 0px 5px 7px;
+	line-height: 20px;
+	font-size: 20px;
+}
+
+.header-projects button{
+	border: none;
+	background: transparent;
+	border-radius: 5px;
+
+	width: 32px;
+	height: 32px;
+}
+
+.header-projects button:hover{
+	background: silver;
+}

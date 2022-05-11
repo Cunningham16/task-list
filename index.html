@@ -4,35 +4,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Task List</title>
-	<link rel="stylesheet" href="src/style.css">
-	<link rel="stylesheet" href="src/calendar-style.css">
-	<link rel="stylesheet" href="src/header-style.css">
-	<link rel="stylesheet" href="src/sidebar-style.css">
+	<link rel="stylesheet" href="src/css/style.css">
+	<link rel="stylesheet" href="src/css/calendar-style.css">
+	<link rel="stylesheet" href="src/css/header-style.css">
+	<link rel="stylesheet" href="src/css/sidebar-style.css">
 </head>
 <body>
 	<header>
 		<div class="header">
 		<div class="right-div">
 			<button class="menu-button">
-				<img src="src/list.svg" alt="menu-icon" class="menu-button-img">
+				<img src="src/img/list.svg" alt="menu-icon" class="menu-button-img">
 			</button>
 			<button class="home-button">
-				<img src="src/house-door.svg" alt="home-img" class="home-button-img">
+				<img src="src/img/house-door.svg" alt="home-img" class="home-button-img">
 			</button>
 			<div class="search">
-				<img src="src/search.svg" alt="" class="icon-search">
+				<img src="src/img/search.svg" alt="" class="icon-search">
 				<input type="text" class="search-input" placeholder="Быстрый поиск">
 			</div>
 		</div>
 		<div class="left-div">
 			<button class="add-task-button">
-				<img src="src/plus-lg.svg" alt="plusAdd" class="add-task-button-img">
+				<img src="src/img/plus-lg.svg" alt="plusAdd" class="add-task-button-img">
 			</button>
 			<button class="info-button">
-				<img src="src/info-circle.svg" alt="info" class="info-icon">
+				<img src="src/img/info-circle.svg" alt="info" class="info-icon">
 			</button>
 			<button class="account">
-				<img src="src/binoculars-fill.svg" alt="account" class="icon-account">
+				<img src="src/img/binoculars-fill.svg" alt="account" class="icon-account">
 			</button>
 		</div>
 	</div>
@@ -40,15 +40,15 @@
 	<section class="sidebar">
 		<section class="main-proj">
 			<button class="unsorted-tasks proj-task">
-			<img src="src/mailbox.svg" alt="">
+			<img src="src/img/mailbox.svg" alt="">
 			<p>Входящие</p>
 		</button>
 		<button class="task-for-now proj-task">
-			<img src="src/calendar-event.svg" alt="">
+			<img src="src/img/calendar-event.svg" alt="">
 			<p>Сегодня</p>
 		</button>
 		<button class="filters-mates proj-task">
-			<img src="src/grid-fill.svg" alt="">
+			<img src="src/img/grid-fill.svg" alt="">
 			<p>Фильтры и метки</p>
 		</button>
 		</section>
@@ -62,7 +62,7 @@
 			</section>
 			<section class="project-list">
 				<section class="project proj-task">
-					<img src="src/dot.svg" alt="">
+					<img src="src/img/dot.svg" alt="">
 					<p>Мой список задач</p>
 				</section>
 			</section>
@@ -82,27 +82,17 @@
 			</div>
 		</section>
 		<button class="add-task">
-			<img src="src/plus-lg.svg" alt="">
+			<img src="src/img/plus-lg.svg" alt="">
 			<p>Новая задача</p>
 		</button>
 		<div class="input-form hidden">
 			<div class="input-form-container">
 				<input name="" id="input-text" class="input-text" type="text" placeholder="Введи задачу сюда" maxlength="60">
 				<div class="btn-input">
-					<div>	
+					<div class="prior__block">	
 						<button class="input-prior">Приоритет</button>
-					</div>
-					<div class="days">
-						<button class="calendar">Дата</button>
-					</div>
-				</div>
-			</div>
-			<div class="btn-input">
-			<button class="ok-form">Ок</button>
-			<button class="cancel-form">Отмена</button>
-		</div>
-		</div>
-		<div class="list-prior hidden">
+
+						<div class="list-prior hidden">
 					<div>
 						<button value="4" class="option-priority">
 						<p class="prior-4">Низкий приоритет</p>
@@ -118,13 +108,17 @@
 					</button>
 			</div>
 		</div>
-		<div class="cont-calendar hidden">
+					</div>
+					<div class="days">
+						<button class="calendar">Дата</button>
+
+						<div class="cont-calendar hidden">
 						<div>
-							<p class="select-data">24.04.2022</p>
+							<p class="select-data"></p>
 						</div>
 						<div class="select-month">
 							<button class="previous-month"> << </button>
-							<p class="without-days">04.2022</p>
+							<p class="without-days"></p>
 							<button class="next-month"> >> </button>
 						</div>
 						<div class="calendar-div"></div>
@@ -133,7 +127,15 @@
 							<button class="cancel-button-calendar">Отмена</button>
 						</div>
 					</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn-input">
+			<button class="ok-form">Ок</button>
+			<button class="cancel-form">Отмена</button>
+		</div>
+		</div>
 	</section>
-	<script src="src/index.js"></script>
+	<script src="src/js/index.js"></script>
 </body>
 </html>

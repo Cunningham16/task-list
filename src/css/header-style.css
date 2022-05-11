@@ -1,0 +1,117 @@
+header{
+	margin-bottom: 40px;
+	padding: 5px 3%;
+	width: 94%;
+	z-index: 3;
+	position: fixed;
+	background-color: #e66458;
+}
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menu-button, .home-button, .add-task-button, .info-button{
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	background-color: transparent;
+}
+
+.menu-button:hover, .home-button:hover, .add-task-button:hover, .info-button:hover{
+	background: rgba(245,245,245,0.4);
+}
+
+.menu-button-img{
+	width: 27px;
+	height: 27px;
+	text-align: center;
+	position: relative;
+	top: 1px;
+	right: 1.5px;
+}
+
+.home-button-img{
+	margin-top: 4px;
+	width: 23px;
+	height: 23px;
+	text-align: center;
+	position: relative;
+	top: -2px;
+	right: 0px;
+}
+
+.right-div{
+	width: 30%;
+	display: flex;
+	align-items: center;
+}
+
+.search{
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.search-input{
+	border-radius:  5px;
+	outline: none!important;
+	border: none;
+	background: #f08071;
+	height: 25px;
+	width: 200px;
+	padding-left: 35px;
+}
+
+.search-input::-webkit-input-placeholder{
+	color: black;
+}
+
+.search:hover .search-input{
+	background: white;
+}
+
+.search-input:focus{
+	width: 300px;
+	background: white;
+}
+
+.home-button{
+	margin-left: 10px;
+}
+
+.icon-search{
+	position: relative;
+	right: -30px;
+	width: 17px;
+	height: 17px;
+	padding-right: 4px;
+	padding-left: 8px;
+	padding-top: 4.5px;
+	padding-bottom: 5.5px;
+	border: none;
+}
+
+.add-task-button-img, .info-icon{
+	padding-top: 1px;
+}
+
+.account{
+	margin-left: 10px;
+	width: 33px;
+	height: 33px;
+	border-radius: 20px;
+	border: 2px solid white;
+	background: lightgreen;
+}
+
+.info-button{
+	margin-left: 10px;
+}
+
+.icon-account{
+	padding-right: 2px;
+}

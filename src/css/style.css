@@ -1,0 +1,302 @@
+body{
+	margin:0;
+	padding:0;
+	background: #6F81D6;
+}
+
+.main-list{
+	position: relative;
+	top: 60px;
+	border-radius: 5px;
+	padding: 20px 30px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.header-list{
+	background: white;
+	border: none; 
+	font-size: 35px;
+	color: black;
+	margin-bottom: 20px;
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.header-list-not-input{
+	cursor: pointer;
+	background: transparent;
+	border: none; 
+	font-size: 35px;
+	color: white;
+	margin-bottom: 20px;
+	width: 80%;
+	border-radius: 5px;
+	transition: 0.1s;
+	height: 40px;
+}
+
+.header-list-not-input:hover{
+	background: rgba(0,0,0,0.5);
+}
+
+.header-list:focus{
+	outline: none!important;
+}
+
+.task{
+	transition: 0.2s;
+	background: white;
+	display: flex;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom:10px;
+	position: relative;
+	transform: scale(0.95,0.95);
+	opacity: 0;
+	width: 100%;
+}
+
+
+.list{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-basis: 70%;
+	width:90%;
+}
+
+.checkbox-task{
+	order: -1;
+	margin-right: 10px;
+	align-self: flex-start;
+	width: 20px;
+	height: 20px;
+}
+
+.text-task{
+	border: none;
+	width: 300%;
+	outline: none!important;
+	background: transparent;
+	font-size: 18px;
+}
+
+.input-text{
+	margin-top: 20px;
+	resize: none;
+	width: 88.5%;
+	height: 30px;
+	border-radius: 5px;
+	padding: 8px;
+	font-size: 18px;
+	border: none;
+	outline: none!important;
+}
+
+.checked{
+	color: gray!important;
+	text-decoration: line-through;
+}
+
+.hidden{
+	display: none;
+}
+
+.display-empty h2{
+	font-size: 25px;
+	margin: 30% 10%;
+	color: white;
+	text-align: center;
+}
+
+.input-form-container{
+	padding:10px;
+	background: white;
+	width:92.5%;
+	border-radius: 5px;
+}
+
+.prior1{
+	font-weight: bold;
+	color: red;
+}
+
+.prior2{
+	font-weight: bold;
+	color: orange;
+}
+
+.prior3{
+	color: blue;
+}
+
+.prior4{
+	color: black;
+}
+
+.prior__block{
+	position: relative;
+}
+
+.input-prior{
+	cursor: pointer;
+	outline: none!important;
+	margin-top:10px;
+	height: 30px;
+	border-radius: 5px;
+	padding-left: 5px;
+	width: 170px; 
+	border: 1px solid lightgray;
+	background: white;
+	transition: 0.1s;
+}
+
+.list-prior div{
+	position: absolute;
+	border-radius: 5px;
+	margin-top: 10px;
+	display: flex;
+	width: 170px;
+	flex-direction: column;
+}
+
+.list-prior div button{
+	height: 50px;
+	border:none;
+	background: white;
+	transition: 0.3s;
+}
+
+.list-prior div button:hover{
+	background: blue;
+	color: white;
+}
+
+.animate-hid{
+	opacity: 0;
+	transform: scale(0.7, 0.7); 
+}
+
+.with-date p{
+	border: none;
+	width: 80px; 
+	margin: 0px 2px;
+	font-size: 13px;
+}
+
+.data{
+	position: relative;
+}
+
+.with-date input{
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+.days{
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+.days .calendar{
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	background: white;
+	transition: 0.1s;
+}
+
+.calendar:hover, .input-prior:hover{
+	background: lightgray;
+}
+
+.btn-input{
+	display: flex;
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+input[type="checkbox"]+label::before{
+	cursor: pointer;
+	content: "";
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 3px 5px 0 0;
+	background: white;
+	border: 1px solid lightgray;
+	border-radius: 20px;
+	transition: 0.2s;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+input[type="checkbox"]:checked + label::before{
+	background: url(src/img/ok.svg);
+	border: 1px solid lightgray;
+	background-repeat: no-repeat;
+	background-position: center;
+	transform: rotate(360deg);
+}
+
+.add-task{
+	display: flex;
+	width: 94.8%;
+	border-radius: 5px;
+	border: none;
+	background: transparent;
+	align-items: center;
+	transition: 0.1s;
+}
+
+.add-task img{
+	width: 25px;
+	height: 25px;
+	margin-right: 15px;
+	margin-left: 13px;
+}
+
+.add-task p{
+	color: white;
+	padding-top: 3px;
+	line-height: 16px;
+	font-size: 16px;
+}
+
+.add-task:hover{
+	background: #FAFAFA;
+}
+
+.add-task:hover p{
+	color: black;
+}
+
+.ok-form{
+	cursor: pointer;
+	width: 150px;
+	height: 34px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	background: white;
+	transition: 0.1s;
+	margin-top: 10px;
+}
+
+.cancel-form{
+	margin-top: 10px;
+	cursor: pointer;
+	width: 150px;
+	height: 34px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	background: #e66458;
+	color: white;
+	transition: 0.1s;
+	margin-left: 15px;
+}

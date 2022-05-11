@@ -1,0 +1,97 @@
+.cont-calendar{
+	margin-top: 10px;
+	position: absolute;
+	border-radius: 10px;
+	width: 250px;
+	background: white;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+.select-month{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.select-month button{
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	border: none;
+	background: none;
+}
+
+.select-month button:hover{
+	background: lightgray;
+}
+
+.select-data{
+	margin: auto;
+	text-align: center;
+	margin: 0 10px;
+	border-bottom: 2px solid lightgray;
+}
+
+.select-data p{
+	margin: 0 10px;
+}
+
+.calendar-div{
+	margin:auto;
+}
+
+.calendar-div table{
+	margin: auto;
+}
+
+.calendar-div{
+	text-align: center;
+}
+
+.input-month{
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	border-radius: 20px;
+	border: none;
+	background: none;
+}
+
+.input-month:hover{
+	background: lightgray;
+}
+
+.active-data{
+	background-color: blue;
+	color: white;
+}
+
+td{
+	padding: 0;
+}
+
+.manip-buttons{
+	display: flex;
+	justify-content: space-between;
+}
+
+.ok-button-calendar, .cancel-button-calendar{
+	margin-top: 10px;
+	height: 30px;
+	width: 45%;
+	border-radius: 5px;
+	border: 1px solid;
+}
+
+.ok-button-calendar{
+	border-color: blue;
+	background: transparent;
+	color: blue;
+}
+
+.cancel-button-calendar{
+	border-color: red;
+	background: transparent;
+	color: red;
+}
